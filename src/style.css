@@ -1,0 +1,133 @@
+:root {
+  --primary: #2f7d3a;
+  --primary-dark: #23602c;
+  --primary-light: #e8f5e9;
+  --accent: #ff8c00;
+  --text: #1f2933;
+  --text-muted: #7b8794;
+  --border: #e4e7eb;
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+input,
+select {
+  font-family: inherit;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 通用按钮 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-accent:hover {
+  filter: brightness(1.06);
+}
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: #fff;
+}
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 标签 */
+.tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* 过渡动画（Vue 动画知识点） */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.4s ease;
+}
+.list-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.list-leave-active {
+  position: absolute;
+}

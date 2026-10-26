@@ -9,7 +9,6 @@ defineEmits(['update:modelValue', 'search'])
 <template>
   <form class="search-bar" @submit.prevent="$emit('search')">
     <input
-      v-model.trim="$attrs.value ?? modelValue"
       :value="modelValue"
       type="text"
       placeholder="输入关键词搜索商品…"

@@ -9,5 +9,9 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true
+  },
+  // 输出到 docs：GitHub Pages「从分支部署」只支持 / 或 /docs 目录
+  build: {
+    outDir: 'docs'
   }
 })
